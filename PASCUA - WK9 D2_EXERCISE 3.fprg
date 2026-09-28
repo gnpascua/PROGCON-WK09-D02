@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PASCUA_WK9 D2 - EXERCISE 3"/>
+        <attribute name="authors" value="gaea nikolaev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-13 09:00:36 pm"/>
+        <attribute name="created" value="Z2FlYSBuaWtvbGFldjtMQVBUT1AtRk82S01LVUI7MjAyNi0wOS0xMzswODozNDo1NSBwbTszNzMz"/>
+        <attribute name="edited" value="Z2FlYSBuaWtvbGFldjtMQVBUT1AtRk82S01LVUI7MjAyNi0wOS0xMzswOTowMDozNiBwbTsxOzM4MzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userName" type="String" array="False" size=""/>
+            <output expression="&quot;Hello, dear user! I am Flowy, your friendly Flowgorithm teacher. Today, we'll have a quiz about the colors of the rainbow! Oh- but before that, what's your name?&quot;" newline="True"/>
+            <input variable="userName"/>
+            <output expression="&quot;What a wonderful name! Let's start the quiz, shall we?&quot;" newline="True"/>
+            <declare name="rainbowColors" type="String" array="True" size="7"/>
+            <declare name="userGuesses" type="String" array="True" size="7"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="correctCount" type="Integer" array="False" size=""/>
+            <assign variable="rainbowColors[0]" expression="&quot;Red&quot;"/>
+            <assign variable="rainbowColors[1]" expression="&quot;Orange&quot;"/>
+            <assign variable="rainbowColors[2]" expression="&quot;Yellow&quot;"/>
+            <assign variable="rainbowColors[3]" expression="&quot;Green&quot;"/>
+            <assign variable="rainbowColors[4]" expression="&quot;Blue&quot;"/>
+            <assign variable="rainbowColors[5]" expression="&quot;Indigo&quot;"/>
+            <assign variable="rainbowColors[6]" expression="&quot;Violet&quot;"/>
+            <for variable="i" start="0" end="6" direction="inc" step="1">
+                <output expression="&quot;Please enter color &quot; &amp; (i + 1) &amp; &quot; of the rainbow!&quot;" newline="True"/>
+                <input variable="userGuesses[i]"/>
+                <assign variable="correctCount" expression="0"/>
+            </for>
+            <for variable="i" start="0" end="6" direction="inc" step="1">
+                <if expression="userGuesses[i] == rainbowColors[i]">
+                    <then>
+                        <assign variable="correctCount" expression="correctCount + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Dear user, you got &quot; &amp; correctCount &amp; &quot; correct answers.&quot;" newline="True"/>
+            <if expression="correctCount &gt;= 6">
+                <then>
+                    <output expression="&quot;Congratulations, &quot; &amp; userName &amp; &quot;! Your grade is excellent!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="correctCount &gt;= 3">
+                        <then>
+                            <output expression="&quot;Good job, &quot; &amp; userName &amp; &quot;! Your grade is average!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Oh no- your grade is poor. But don't worry! You can do better next time!&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
